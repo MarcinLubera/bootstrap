@@ -4,6 +4,11 @@ function addNewTask(title){
     taskLi.classList.add('.single-task');
     taskLi.innerHTML = prepereTaskHTML(title);
 
+    var removeBtn = taskLi.querySelector('.remove');
+
+      removeBtn.addEventListener('click', function(){
+        deleteTask(this);
+      });
 
     tasksContainer.appendChild(taskLi);
 
@@ -11,7 +16,7 @@ function addNewTask(title){
       return  '<label class="col-12">'+'<li class="single-task">' + ' <input type="checkbox">' +
       '<span>' +
         '<i class="fa fa-check"></i>' +
-      '</span>'+ title +'<span class="remove">' +
+      '</span>'+ ' '+ title +'<span class="remove">' +
         '<i class="fa fa-close"></i>' +
       '</span>' + '</li>' + '</label>';
 }} 
